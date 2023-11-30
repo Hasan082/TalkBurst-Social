@@ -23,7 +23,7 @@ class SplashController extends GetxController {
 
   void goToNextScreen() {
     Future.delayed(const Duration(seconds: 3)).then((_) {
-      // Get.offAll(() => const WelcomeScreen());
+      Get.offAll(() => const WelcomeScreen());
     });
   }
 

@@ -16,12 +16,19 @@ class WelcomeScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            const Image(
+              image: AssetImage("assets/images/logo_light.png"),
+              width: 90,
+              fit: BoxFit.contain,
+            ),
+            const SizedBox(height: 25,),
             CustomElevatedBtn(
               onPressed: () {
                 Get.to(() => SignUpScreen());
               },
               btnText: 'Create Account',
             ),
+            const SizedBox(height: 10,),
             TextButton(
                 onPressed: () {
                   Get.to(() => const LoginScreen());
