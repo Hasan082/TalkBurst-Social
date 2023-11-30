@@ -50,10 +50,35 @@ class ThemeManager {
         ),
       ),
       appBarTheme: const AppBarTheme(
-          color: Colors.white,
+          color: Color.fromRGBO(29, 41, 57, 1),
           elevation: 0,
           titleTextStyle: TextStyle(color: Colors.white, fontSize: 22)
       ),
+      textTheme: const TextTheme(
+        bodySmall: TextStyle(
+          fontSize: 14,
+          fontWeight: FontWeight.w500,
+          color: Color.fromRGBO(16, 24, 40, 1),
+        ),
+        bodyMedium: TextStyle(
+          fontSize: 16,
+        ),
+        titleLarge: TextStyle(
+          fontSize: 24,
+          fontWeight: FontWeight.w400,
+          color: Color.fromRGBO(16, 24, 40, 1),
+        ),
+        titleMedium: TextStyle(
+          fontSize: 20,
+          fontWeight: FontWeight.w400,
+          color: Color.fromRGBO(16, 24, 40, 1),
+        ),
+        titleSmall: TextStyle(
+          fontSize: 18,
+          fontWeight: FontWeight.w400,
+          color: Color.fromRGBO(16, 24, 40, 1),
+        ),
+      )
     );
   }
 }

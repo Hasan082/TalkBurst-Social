@@ -1,9 +1,10 @@
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
+import 'package:talkbrust/application/app_binding.dart';
 import 'package:talkbrust/application/them_manager.dart';
-import 'package:talkbrust/views/auth/signup_screen.dart';
-import 'package:talkbrust/views/auth/welcome.dart';
+import 'package:talkbrust/views/auth/spalsh_screen.dart';
+
 
 
 class TalkBrust extends StatelessWidget {
@@ -15,10 +16,11 @@ class TalkBrust extends StatelessWidget {
       useInheritedMediaQuery: true,
       locale: DevicePreview.locale(context),
       builder: DevicePreview.appBuilder,
+      initialBinding: AppBindings(),
       debugShowCheckedModeBanner: false,
       title: 'TalkBurst',
       theme: ThemeManager.getAppTheme(),
-      home: const WelcomeScreen(),
+      home: const SplashScreen(),
     );
   }
 }

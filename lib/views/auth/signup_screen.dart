@@ -31,13 +31,22 @@ class SignUpScreen extends StatelessWidget {
   // Regular expression for a basic mobile number validation
   final RegExp mobileRegex = RegExp(r'^[0-9]{11}$');
 
+  //ALL TEXT WIDGET====
+  Widget pageTextWidget(BuildContext context, String text) {
+    return Text(
+      text,
+      style: Theme.of(context).textTheme.bodySmall,
+    );
+  }
+
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         leading: const Icon(
           Icons.arrow_back_ios_new_outlined,
-          color: Color.fromRGBO(29, 41, 57, 1),
         ),
       ),
       body: SafeArea(
@@ -50,25 +59,11 @@ class SignUpScreen extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Text(
-                      'Register to TalkBrust:',
-                      style: TextStyle(
-                        fontSize: 24,
-                        fontWeight: FontWeight.w400,
-                        color: Color.fromRGBO(16, 24, 40, 1),
-                      ),
-                    ),
+                    pageTextWidget(context, 'Register to TalkBrust:'),
                     const SizedBox(
                       height: 20,
                     ),
-                    const Text(
-                      'First Name',
-                      style: TextStyle(
-                        fontSize: 14,
-                        fontWeight: FontWeight.w500,
-                        color: Color.fromRGBO(16, 24, 40, 1),
-                      ),
-                    ),
+                    pageTextWidget(context, 'First Name'),
                     const SizedBox(
                       height: 8,
                     ),
@@ -89,14 +84,7 @@ class SignUpScreen extends StatelessWidget {
                     const SizedBox(
                       height: 15,
                     ),
-                    const Text(
-                      'Last Name',
-                      style: TextStyle(
-                        fontSize: 14,
-                        fontWeight: FontWeight.w500,
-                        color: Color.fromRGBO(16, 24, 40, 1),
-                      ),
-                    ),
+                    pageTextWidget(context, 'Last Name',),
                     const SizedBox(
                       height: 8,
                     ),
@@ -117,14 +105,7 @@ class SignUpScreen extends StatelessWidget {
                     const SizedBox(
                       height: 15,
                     ),
-                    const Text(
-                      'Username',
-                      style: TextStyle(
-                        fontSize: 14,
-                        fontWeight: FontWeight.w500,
-                        color: Color.fromRGBO(16, 24, 40, 1),
-                      ),
-                    ),
+                    pageTextWidget(context, 'Username',),
                     const SizedBox(
                       height: 8,
                     ),
@@ -145,14 +126,7 @@ class SignUpScreen extends StatelessWidget {
                     const SizedBox(
                       height: 15,
                     ),
-                    const Text(
-                      'Email',
-                      style: TextStyle(
-                        fontSize: 14,
-                        fontWeight: FontWeight.w500,
-                        color: Color.fromRGBO(16, 24, 40, 1),
-                      ),
-                    ),
+                    pageTextWidget(context, 'Email',),
                     const SizedBox(
                       height: 8,
                     ),
@@ -176,14 +150,7 @@ class SignUpScreen extends StatelessWidget {
                     const SizedBox(
                       height: 15,
                     ),
-                    const Text(
-                      'Mobile',
-                      style: TextStyle(
-                        fontSize: 14,
-                        fontWeight: FontWeight.w500,
-                        color: Color.fromRGBO(16, 24, 40, 1),
-                      ),
-                    ),
+                    pageTextWidget(context, 'Mobile',),
                     const SizedBox(
                       height: 8,
                     ),
@@ -207,14 +174,7 @@ class SignUpScreen extends StatelessWidget {
                     const SizedBox(
                       height: 15,
                     ),
-                    const Text(
-                      'Password',
-                      style: TextStyle(
-                        fontSize: 14,
-                        fontWeight: FontWeight.w500,
-                        color: Color.fromRGBO(16, 24, 40, 1),
-                      ),
-                    ),
+                    pageTextWidget(context, 'Password',),
                     const SizedBox(
                       height: 8,
                     ),
@@ -243,13 +203,14 @@ class SignUpScreen extends StatelessWidget {
                       height: 25,
                     ),
                     CustomElevatedBtn(
-                        onPressed: () {
-                          if (_formKey.currentState!.validate()) {
-                            if (kDebugMode) {
-                              print('Registration successful!');
-                            }
+                      onPressed: () {
+                        if (_formKey.currentState!.validate()) {
+                          if (kDebugMode) {
+                            print('Registration successful!');
                           }
-                        }, activeBtn: activeBtn,
+                        }
+                      },
+                      activeBtn: activeBtn,
                       btnText: 'Sign Up',
                     ),
                     const SizedBox(
@@ -258,14 +219,7 @@ class SignUpScreen extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        const Text(
-                          'Have an account?',
-                          style: TextStyle(
-                            fontSize: 14,
-                            fontWeight: FontWeight.w400,
-                            color: Color.fromRGBO(94, 96, 100, 1),
-                          ),
-                        ),
+                        pageTextWidget(context, 'Have an account?'),
                         const SizedBox(
                           width: 5,
                         ),
@@ -273,19 +227,12 @@ class SignUpScreen extends StatelessWidget {
                           onTap: () {
                             Get.offAll(() => const LoginScreen());
                           },
-                          child: const Text(
-                            'Sign in',
-                            style: TextStyle(
-                              fontSize: 14,
-                              fontWeight: FontWeight.w600,
-                              color: Color.fromRGBO(68, 120, 255, 1),
-                            ),
-                          ),
+                          child: pageTextWidget(context, 'Sign in',),
                         ),
                       ],
                     ),
                     const SizedBox(
-                      height: 40,
+                      height: 30,
                     ),
                   ],
                 ),
@@ -296,6 +243,9 @@ class SignUpScreen extends StatelessWidget {
       ),
     );
   }
+
 }
+
+
 
 
