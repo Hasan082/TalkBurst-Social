@@ -4,7 +4,6 @@ import 'package:talkbrust/views/auth/welcome.dart';
 
 
 
-
 class SplashController extends GetxController {
   String versionNumber = '';
 
