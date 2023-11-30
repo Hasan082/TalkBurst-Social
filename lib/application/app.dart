@@ -16,7 +16,6 @@ class TalkBrust extends StatelessWidget {
       useInheritedMediaQuery: true,
       locale: DevicePreview.locale(context),
       builder: DevicePreview.appBuilder,
-      initialBinding: AppBindings(),
       debugShowCheckedModeBanner: false,
       title: 'TalkBurst',
       theme: ThemeManager.getAppTheme(),
