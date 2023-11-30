@@ -1,7 +1,10 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:talkbrust/views/auth/login.dart';
+import 'package:talkbrust/views/auth/login_screen.dart';
 import 'package:talkbrust/widgets/resusable_formfiled/reusable_form_field.dart';
+
+import '../../widgets/button/custom_elevated_button.dart';
 
 class SignUpScreen extends StatelessWidget {
   SignUpScreen({super.key});
@@ -13,6 +16,7 @@ class SignUpScreen extends StatelessWidget {
   final TextEditingController _mobileTEController = TextEditingController();
   final TextEditingController _passwordTEController = TextEditingController();
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  bool activeBtn = false;
 
   // Regular expression for email validation
   final RegExp emailRegex = RegExp(
@@ -47,7 +51,7 @@ class SignUpScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     const Text(
-                      'Fill up your details to create TalkBrust account',
+                      'Register to TalkBrust:',
                       style: TextStyle(
                         fontSize: 24,
                         fontWeight: FontWeight.w400,
@@ -55,7 +59,7 @@ class SignUpScreen extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(
-                      height: 40,
+                      height: 20,
                     ),
                     const Text(
                       'First Name',
@@ -238,32 +242,15 @@ class SignUpScreen extends StatelessWidget {
                     const SizedBox(
                       height: 25,
                     ),
-                    SizedBox(
-                      height: 36,
-                      width: double.infinity,
-                      child: ElevatedButton(
+                    CustomElevatedBtn(
                         onPressed: () {
                           if (_formKey.currentState!.validate()) {
-                            print('Registration successful!');
+                            if (kDebugMode) {
+                              print('Registration successful!');
+                            }
                           }
-                        },
-                        style: ElevatedButton.styleFrom(
-                          elevation: 0,
-                          backgroundColor:
-                              const Color.fromRGBO(218, 228, 255, 1),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(4.0),
-                          ),
-                        ),
-                        child: const Text(
-                          'Sign Up',
-                          style: TextStyle(
-                            fontSize: 14,
-                            fontWeight: FontWeight.w600,
-                            color: Color.fromRGBO(255, 255, 255, 1),
-                          ),
-                        ),
-                      ),
+                        }, activeBtn: activeBtn,
+                      btnText: 'Sign Up',
                     ),
                     const SizedBox(
                       height: 20,
@@ -310,3 +297,5 @@ class SignUpScreen extends StatelessWidget {
     );
   }
 }
+
+

@@ -1,8 +1,7 @@
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:talkbrust/views/auth/signup_screen.dart';
+import 'application/app.dart';
 
 void main() {
   runApp(
@@ -13,22 +12,4 @@ void main() {
   );
 }
 
-class TalkBrust extends StatelessWidget {
-  const TalkBrust({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return GetMaterialApp(
-      useInheritedMediaQuery: true,
-      locale: DevicePreview.locale(context),
-      builder: DevicePreview.appBuilder,
-      debugShowCheckedModeBanner: false,
-      title: 'TalkBurst',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: SignUpScreen(),
-    );
-  }
-}
