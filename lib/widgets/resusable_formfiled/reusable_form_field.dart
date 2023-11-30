@@ -32,35 +32,23 @@ class ReusableTextField extends StatelessWidget {
         prefixIcon: prefixIcon != null
             ? Icon(
                 prefixIcon!.icon,
-                color: const Color.fromRGBO(29, 41, 57, 1),
               )
             : null,
         suffixIcon: suffixIcon != null
             ? Icon(
                 suffixIcon!.icon,
-                color: const Color.fromRGBO(29, 41, 57, 1),
               )
             : null,
-        fillColor: Colors.white,
         hintText: hintText,
-        contentPadding: const EdgeInsets.symmetric(
-          vertical: 2,
-          horizontal: 2,
-        ),
-        hintStyle: const TextStyle(
-          color: Color.fromRGBO(152, 162, 179, 1),
-        ),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(4),
           borderSide: const BorderSide(
-            color: Color.fromRGBO(208, 213, 221, 1),
             width: 1.0,
           ),
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(4),
           borderSide: const BorderSide(
-            color: Color.fromRGBO(105, 147, 255, 1),
             width: 1.0,
           ),
         ),
