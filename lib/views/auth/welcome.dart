@@ -40,6 +40,8 @@ class WelcomeScreen extends StatelessWidget {
                     SizedBox(
                       width: 10,
                     ),
+                    Text('Log In'),
+                    SizedBox(width: 10,),
                     Icon(Icons.keyboard_arrow_down)
                   ],
                 )),
