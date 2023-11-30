@@ -32,12 +32,11 @@ class WelcomeScreen extends StatelessWidget {
             ),
             TextButton(
                 onPressed: () {
-                  Get.to(() => const LoginScreen());
+                  Get.to(() => LoginScreen());
                 },
                 child: const Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text('Login'),
                     SizedBox(
                       width: 10,
                     ),
