@@ -49,10 +49,10 @@ class ThemeManager {
           ),
         ),
       ),
-      appBarTheme: const AppBarTheme(
-          color: Color.fromRGBO(29, 41, 57, 1),
+      appBarTheme:  const AppBarTheme(
+          backgroundColor: Colors.white,
           elevation: 0,
-          titleTextStyle: TextStyle(color: Colors.white, fontSize: 22)
+          titleTextStyle: TextStyle(color: Color.fromRGBO(29, 41, 57, 1), fontSize: 22)
       ),
       textTheme: const TextTheme(
         bodySmall: TextStyle(
