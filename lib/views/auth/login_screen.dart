@@ -1,9 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-
 import '../../widgets/button/custom_elevated_button.dart';
 import '../../widgets/resusable_formfiled/reusable_form_field.dart';
-
 class LoginScreen extends StatelessWidget {
   LoginScreen({super.key});
 
@@ -15,7 +13,6 @@ class LoginScreen extends StatelessWidget {
   final RegExp emailRegex = RegExp(
     r'^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$',
   );
-
 
   Widget pageTextWidget(BuildContext context, String text) {
     return Text(

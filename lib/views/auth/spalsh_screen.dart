@@ -2,10 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../controller/splash_controller.dart';
 
-
 class SplashScreen extends StatelessWidget {
   const SplashScreen({Key? key}) : super(key: key);
-
 
   @override
   Widget build(BuildContext context) {
@@ -27,8 +25,9 @@ class SplashScreen extends StatelessWidget {
                 builder: (splashController) {
                   return Text(
                     splashController.versionNumber,
-                    style: Theme.of(context).textTheme.titleMedium,);
-                  },
+                    style: Theme.of(context).textTheme.titleMedium,
+                  );
+                },
               ),
               const SizedBox(height: 10),
             ],

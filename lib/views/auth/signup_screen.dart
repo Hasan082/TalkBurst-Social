@@ -39,8 +39,6 @@ class SignUpScreen extends StatelessWidget {
     );
   }
 
-
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -88,7 +86,10 @@ class SignUpScreen extends StatelessWidget {
                     const SizedBox(
                       height: 15,
                     ),
-                    pageTextWidget(context, 'Last Name',),
+                    pageTextWidget(
+                      context,
+                      'Last Name',
+                    ),
                     const SizedBox(
                       height: 8,
                     ),
@@ -109,7 +110,10 @@ class SignUpScreen extends StatelessWidget {
                     const SizedBox(
                       height: 15,
                     ),
-                    pageTextWidget(context, 'Username',),
+                    pageTextWidget(
+                      context,
+                      'Username',
+                    ),
                     const SizedBox(
                       height: 8,
                     ),
@@ -130,7 +134,10 @@ class SignUpScreen extends StatelessWidget {
                     const SizedBox(
                       height: 15,
                     ),
-                    pageTextWidget(context, 'Email',),
+                    pageTextWidget(
+                      context,
+                      'Email',
+                    ),
                     const SizedBox(
                       height: 8,
                     ),
@@ -154,7 +161,10 @@ class SignUpScreen extends StatelessWidget {
                     const SizedBox(
                       height: 15,
                     ),
-                    pageTextWidget(context, 'Mobile',),
+                    pageTextWidget(
+                      context,
+                      'Mobile',
+                    ),
                     const SizedBox(
                       height: 8,
                     ),
@@ -178,7 +188,10 @@ class SignUpScreen extends StatelessWidget {
                     const SizedBox(
                       height: 15,
                     ),
-                    pageTextWidget(context, 'Password',),
+                    pageTextWidget(
+                      context,
+                      'Password',
+                    ),
                     const SizedBox(
                       height: 8,
                     ),
@@ -231,7 +244,10 @@ class SignUpScreen extends StatelessWidget {
                           onTap: () {
                             Get.offAll(() => LoginScreen());
                           },
-                          child: pageTextWidget(context, 'Sign in',),
+                          child: pageTextWidget(
+                            context,
+                            'Sign in',
+                          ),
                         ),
                       ],
                     ),
@@ -247,9 +263,4 @@ class SignUpScreen extends StatelessWidget {
       ),
     );
   }
-
 }
-
-
-
-

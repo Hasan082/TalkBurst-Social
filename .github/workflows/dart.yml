@@ -17,13 +17,13 @@ jobs:
       - name: Setup Flutter
         uses: subosito/flutter-action@v2
         with:
-          channel: 'stable'  # specify your desired Flutter channel
+          channel: 'stable'
 
       - name: Install dependencies
         run: flutter pub get
 
       - name: Verify formatting
-        run: dart format --output=none --set-exit-if-changed .
+        run: dart format --set-exit-if-changed .
 
       - name: Analyze project source
         run: dart analyze --fatal-infos
