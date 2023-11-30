@@ -1,16 +1,19 @@
-# talkbrust
+# TalkBurst
 
-A new Flutter project.
+### Where Conversations Come to Life!
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+## Developer Instructions
 
-A few resources to get you started if this is your first Flutter project:
+We've incorporated three distinct font styles for enhanced readability:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- `bodySmall`: Utilize with `style: Theme.of(context).textTheme.bodySmall,`
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- `bodyMedium`: Utilize with `style: Theme.of(context).textTheme.bodyMedium,`
+
+- `titleLarge`: Utilize with `style: Theme.of(context).textTheme.titleLarge,`
+
+- `titleMedium`: Utilize with `style: Theme.of(context).textTheme.titleMedium,`
+
+- `titleSmall`: Utilize with `style: Theme.of(context).textTheme.titleSmall,`
