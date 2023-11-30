@@ -19,6 +19,7 @@ class TalkBrust extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'TalkBurst',
       theme: ThemeManager.getAppTheme(),
+      initialBinding: AppBindings(),
       home: const SplashScreen(),
     );
   }
