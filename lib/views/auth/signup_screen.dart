@@ -47,6 +47,7 @@ class SignUpScreen extends StatelessWidget {
       appBar: AppBar(
         leading: const Icon(
           Icons.arrow_back_ios_new_outlined,
+          color: Color.fromRGBO(29, 41, 57, 1),
         ),
       ),
       body: SafeArea(
@@ -59,7 +60,10 @@ class SignUpScreen extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    pageTextWidget(context, 'Register to TalkBrust:'),
+                    Text(
+                      'Register to TalkBrust',
+                      style: Theme.of(context).textTheme.titleMedium,
+                    ),
                     const SizedBox(
                       height: 20,
                     ),
