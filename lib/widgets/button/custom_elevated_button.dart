@@ -5,7 +5,11 @@ class CustomElevatedBtn extends StatelessWidget {
   final bool? activeBtn;
   final String btnText;
 
-  const CustomElevatedBtn({super.key, required this.onPressed, this.activeBtn, required this.btnText});
+  const CustomElevatedBtn(
+      {super.key,
+      required this.onPressed,
+      this.activeBtn,
+      required this.btnText});
 
   @override
   Widget build(BuildContext context) {
@@ -15,15 +19,18 @@ class CustomElevatedBtn extends StatelessWidget {
       child: ElevatedButton(
         onPressed: onPressed,
         style: ElevatedButton.styleFrom(
-          backgroundColor:
-          activeBtn == false ? const Color.fromRGBO(218, 228, 255, 1): Colors.blue,
+          backgroundColor: activeBtn == false
+              ? const Color.fromRGBO(218, 228, 255, 1)
+              : Colors.blue,
         ),
         child: Text(
           btnText,
           style: TextStyle(
             fontSize: 14,
             fontWeight: FontWeight.w600,
-            color: activeBtn == false ? const Color.fromRGBO(255, 255, 255, 1):Colors.white,
+            color: activeBtn == false
+                ? const Color.fromRGBO(255, 255, 255, 1)
+                : Colors.white,
           ),
         ),
       ),

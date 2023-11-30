@@ -2,8 +2,6 @@ import 'package:get/get.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 import 'package:talkbrust/views/auth/welcome.dart';
 
-
-
 class SplashController extends GetxController {
   String versionNumber = '';
 
@@ -25,6 +23,4 @@ class SplashController extends GetxController {
       Get.offAll(() => const WelcomeScreen());
     });
   }
-
-
 }
