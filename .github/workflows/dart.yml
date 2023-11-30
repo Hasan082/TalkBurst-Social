@@ -2,7 +2,8 @@ name: Dart
 
 on:
   push:
-    branches: ["development"]
+    branches-ignore:
+      - development
   pull_request:
     branches: ["development"]
 
