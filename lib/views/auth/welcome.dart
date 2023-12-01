@@ -18,7 +18,7 @@ class WelcomeScreen extends StatelessWidget {
           children: [
             const Image(
               image: AssetImage("assets/images/logo_light.png"),
-              width: 80,
+              width: 85,
               fit: BoxFit.contain,
             ),
             const SizedBox(
