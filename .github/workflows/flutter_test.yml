@@ -37,7 +37,8 @@ jobs:
         run: |
           git config user.name "Hasan082"
           git config user.email "dr.has82@gmail.com"
-          git checkout Stagging
+          git fetch
+          git checkout origin/Stagging
           git merge --no-ff dev-hasan
           git push -u origin Stagging
 
