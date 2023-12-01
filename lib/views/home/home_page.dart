@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../widgets/custom_appbar/custom_appbar.dart';
 import '../../widgets/home_cart/home_card.dart';
 import '../../widgets/story_widgets/custom_story_widget.dart';
 class HomePage extends StatelessWidget {
@@ -7,8 +8,9 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Home Page"),
+      appBar: const PreferredSize(
+        preferredSize: Size.fromHeight(60),
+        child:CustomAppbar(),
       ),
       body:Column(
         children: [
