@@ -15,11 +15,7 @@ class SplashController extends GetxController {
     goToNextScreen();
   }
 
-  @override
-  void onClose() {
-    delayedTimer.cancel();
-    super.onClose();
-  }
+
 
   Future<void> getVersionNumber() async {
     final info = await PackageInfo.fromPlatform();

@@ -18,7 +18,7 @@ void main() {
     await testForWidget<TextButton>(tester);
     await testForWidget<AppBar>(tester);
     await testForWidget<Image>(tester);
-    await tester.pump(const Duration(seconds: 2));
+    await tester.pump(const Duration(seconds: 5));
     await testForWidget<IconButton>(tester);
     await testForWidget<TextField>(tester);
     await testForWidget<Radio>(tester);
