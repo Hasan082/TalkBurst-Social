@@ -18,7 +18,7 @@ void main() {
     await testForWidget<TextButton>(tester);
     await testForWidget<AppBar>(tester);
     await testForWidget<Image>(tester);
-
+    await tester.pump(const Duration(seconds: 2));
     await testForWidget<IconButton>(tester);
     await testForWidget<TextField>(tester);
     await testForWidget<Radio>(tester);
@@ -33,7 +33,6 @@ void main() {
     await testForWidget<Card>(tester);
     await testForWidget<AlertDialog>(tester);
     await testForWidget<SnackBar>(tester);
-
     await testForWidget<CircleAvatar>(tester);
     await testForWidget<Divider>(tester);
     await testForWidget<BottomNavigationBar>(tester);
