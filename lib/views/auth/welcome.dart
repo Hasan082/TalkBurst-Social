@@ -37,6 +37,7 @@ class WelcomeScreen extends StatelessWidget {
                 child: const Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
+                    Text('Log In'),
                     SizedBox(
                       width: 10,
                     ),
