@@ -3,7 +3,7 @@ name: Flutter Test and Deploy
 on:
   push:
     branches:
-      - Stagging
+      - Staging
 
 jobs:
   build:
@@ -33,6 +33,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Deploy to Staging
+      - name: Push to Development
         run: |
-          # Your deployment steps go here
+          git config user.name "${{ github.actor }}"
+          git config user.email "${{ github.actor }}@users.noreply.github.com"
+          git checkout development
+          git merge --no-ff ${{ github.sha }}
+          git push origin development
