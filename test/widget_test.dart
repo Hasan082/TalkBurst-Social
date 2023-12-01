@@ -42,10 +42,9 @@ void main() {
     await testForWidget<CircularProgressIndicator>(tester);
     await testForWidget<GridView>(tester);
   });
-<<<<<<< HEAD
+
 }
-=======
-}
+
 
 Future<void> testForWidget<T extends Widget>(WidgetTester tester) async {
   final widgetFinder = find.byType(T);
@@ -55,4 +54,4 @@ Future<void> testForWidget<T extends Widget>(WidgetTester tester) async {
   } else {
   }
 }
->>>>>>> 450a68e (Git added tester)
+
