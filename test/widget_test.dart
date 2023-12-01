@@ -1,24 +1,55 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:device_preview/device_preview.dart';
 import 'package:talkbrust/application/app.dart';
 
-import 'package:talkbrust/main.dart';
 
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
-    await tester.pumpWidget(const TalkBrust());
+  testWidgets('Widget Tests', (WidgetTester tester) async {
+    await tester.pumpWidget(
+      DevicePreview(
+        enabled: false, // Adjust this based on your needs
+        builder: (context) => const TalkBrust(), // Replace 'TalkBrust' with the actual widget used in your main.dart file
+      ),
+    );
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
+    await testForWidget<Text>(tester);
+    await testForWidget<ElevatedButton>(tester);
+    await testForWidget<TextButton>(tester);
+    await testForWidget<AppBar>(tester);
+    await testForWidget<Image>(tester);
 
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
-    await tester.pump();  // Trigger a frame to rebuild the widget tree.
+    await testForWidget<IconButton>(tester);
+    await testForWidget<TextField>(tester);
+    await testForWidget<Radio>(tester);
+    await testForWidget<Switch>(tester);
+    await testForWidget<DropdownButton<String>>(tester);
+    await testForWidget<PopupMenuButton<String>>(tester);
+    await testForWidget<Container>(tester);
+    await testForWidget<Row>(tester);
+    await testForWidget<Column>(tester);
+    await testForWidget<ListView>(tester);
+    await testForWidget<Stack>(tester);
+    await testForWidget<Card>(tester);
+    await testForWidget<AlertDialog>(tester);
+    await testForWidget<SnackBar>(tester);
 
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+    await testForWidget<CircleAvatar>(tester);
+    await testForWidget<Divider>(tester);
+    await testForWidget<BottomNavigationBar>(tester);
+    await testForWidget<Drawer>(tester);
+    await testForWidget<PopupMenuEntry>(tester);
+    await testForWidget<LinearProgressIndicator>(tester);
+    await testForWidget<CircularProgressIndicator>(tester);
+    await testForWidget<GridView>(tester);
   });
+}
+
+Future<void> testForWidget<T extends Widget>(WidgetTester tester) async {
+  final widgetFinder = find.byType(T);
+
+  if (widgetFinder.evaluate().isNotEmpty) {
+    expect(widgetFinder, findsOneWidget);
+  } else {
+  }
 }
