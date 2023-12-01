@@ -33,14 +33,12 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Push to Stagging
-        run: |
       - name: Push to Staging
         run: |
           git config user.name "Hasan082"
           git config user.email "dr.has82@gmail.com"
           git checkout Stagging
           git merge --no-ff dev-hasan
-          git push origin Stagging
+          git push -u origin Stagging
 
 
