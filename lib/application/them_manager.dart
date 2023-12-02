@@ -63,6 +63,7 @@ class ThemeManager {
           ),
           titleLarge: TextStyle(
             fontSize: 24,
+            fontFamily: 'lobster',
             fontWeight: FontWeight.w400,
             color: Color.fromRGBO(16, 24, 40, 1),
           ),

@@ -16,10 +16,11 @@ class HomePage extends StatelessWidget {
 
       body: ListView(
         children: [
-          const SizedBox(
-            height: 165,
-            child:CustomStoryWidget(),
-          ),
+          CustomStoryWidget(),
+          // const SizedBox(
+          //   height: 165,
+          //   child:
+          // ),
           ListView.builder(
               shrinkWrap: true,
               physics: const NeverScrollableScrollPhysics(),
