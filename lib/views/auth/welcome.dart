@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:talkbrust/views/auth/login_screen.dart';
 import 'package:talkbrust/views/auth/signup_screen.dart';
+import 'package:talkbrust/views/dashboard_page.dart';
+
 import '../../widgets/button/custom_elevated_button.dart';
 
 class WelcomeScreen extends StatelessWidget {
@@ -31,21 +33,32 @@ class WelcomeScreen extends StatelessWidget {
               btnText: 'Create Account',
             ),
             TextButton(
-                onPressed: () {
-                  Get.to(() => LoginScreen());
-                },
-                child: const Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text('Log In'),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    Text('Log In'),
-                    SizedBox(width: 10,),
-                    Icon(Icons.keyboard_arrow_down)
-                  ],
-                )),
+              onPressed: () {
+                Get.to(() => LoginScreen());
+              },
+              child: const Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text('Log In'),
+                  SizedBox(
+                    width: 10,
+                  ),
+                  Text('Log In'),
+                  SizedBox(
+                    width: 10,
+                  ),
+                  Icon(Icons.keyboard_arrow_down)
+                ],
+              ),
+            ),
+            //ToDo: Remove below button before release
+            const SizedBox(height: 100),
+            CustomElevatedBtn(
+              onPressed: () {
+                Get.to(() => const DashboardPage());
+              },
+              btnText: 'Dashboard',
+            ),
           ],
         ),
       ),
