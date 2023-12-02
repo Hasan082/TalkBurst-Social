@@ -1,5 +1,5 @@
 name: talkbrust
-description: A new Flutter project.
+description: Conversion come to life.
 
 publish_to: 'none'
 
@@ -34,3 +34,7 @@ flutter:
   assets:
     - assets/images/
 
+  fonts:
+    - family: lobster
+      fonts:
+        - asset: assets/fonts/lobster_regular.ttf
