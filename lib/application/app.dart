@@ -5,6 +5,9 @@ import 'package:talkbrust/application/app_binding.dart';
 import 'package:talkbrust/application/them_manager.dart';
 import 'package:talkbrust/views/auth/spalsh_screen.dart';
 
+import '../views/home/home_page.dart';
+
+
 class TalkBrust extends StatelessWidget {
   const TalkBrust({super.key});
 
@@ -18,7 +21,8 @@ class TalkBrust extends StatelessWidget {
       title: 'TalkBurst',
       theme: ThemeManager.getAppTheme(),
       initialBinding: AppBindings(),
-      home: const SplashScreen(),
+      home: const HomePage(),
     );
   }
 }
+
