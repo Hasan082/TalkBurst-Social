@@ -17,6 +17,7 @@ dependencies:
   device_preview: ^1.1.0
   get: ^4.6.6
   package_info_plus: ^4.1.0
+  persistent_bottom_nav_bar: ^5.0.2
 
 dev_dependencies:
   flutter_test:
