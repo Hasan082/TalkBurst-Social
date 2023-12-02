@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 import 'package:talkbrust/views/feed/feed_page.dart';
+import 'package:talkbrust/views/home/home_page.dart';
 import 'package:talkbrust/views/post/create_post.dart';
 import 'package:talkbrust/views/search/search_page.dart';
 import 'package:talkbrust/views/user/user_profile.dart';
@@ -18,7 +19,7 @@ class _DashboardPageState extends State<DashboardPage> {
 
   List<Widget> _buildScreens() {
     return const [
-      FeedPage(),
+      HomePage(),
       SearchPage(),
       CreatePostPage(),
       UserProfilePage(),

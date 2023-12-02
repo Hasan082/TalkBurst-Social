@@ -15,11 +15,10 @@ class CustomAppbar extends StatelessWidget {
         children: [
           const CustomCircularAvater(),
           const Spacer(),
-          const Text("Talk Bust",style: TextStyle(color: Colors.black,fontFamily: 'lobster'),),
+          Text("Talk Bust", style: Theme.of(context).textTheme.titleLarge,),
           const Spacer(),
           IconButton(onPressed: (){}, icon: Image.asset("assets/images/notification.png")),
           IconButton(onPressed: (){}, icon: Image.asset("assets/images/appbar_message_icon.png")),
-
         ],
       ),
     );
