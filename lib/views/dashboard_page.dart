@@ -5,7 +5,7 @@ import 'package:talkbrust/views/feed/feed_page.dart';
 import 'package:talkbrust/views/home/home_page.dart';
 import 'package:talkbrust/views/post/create_post.dart';
 import 'package:talkbrust/views/search/search_page.dart';
-import 'package:talkbrust/views/user/user_profile.dart';
+import 'package:talkbrust/views/user/user_profile_screen.dart';
 
 class DashboardPage extends StatefulWidget {
   const DashboardPage({super.key});
@@ -22,7 +22,7 @@ class _DashboardPageState extends State<DashboardPage> {
       HomePage(),
       SearchPage(),
       CreatePostPage(),
-      UserProfilePage(),
+      UserProfileScreen(),
     ];
   }
 
