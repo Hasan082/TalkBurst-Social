@@ -8,7 +8,6 @@ import 'package:talkbrust/views/auth/spalsh_screen.dart';
 class TalkBrust extends StatelessWidget {
   const TalkBrust({super.key});
 
-
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(

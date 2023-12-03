@@ -15,8 +15,6 @@ class SplashController extends GetxController {
     goToNextScreen();
   }
 
-
-
   Future<void> getVersionNumber() async {
     final info = await PackageInfo.fromPlatform();
     versionNumber = info.version;
