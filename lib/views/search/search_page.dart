@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+
+import '../../widgets/search_box.dart';
 class SearchPage extends StatefulWidget {
   const SearchPage({super.key});
 
@@ -30,7 +32,6 @@ class _SearchPageState extends State<SearchPage> {
     "https://source.unsplash.com/featured/?urban"
   ];
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,17 +40,7 @@ class _SearchPageState extends State<SearchPage> {
           padding: const EdgeInsets.all(15.0),
           child: Column(
             children: [
-              TextFormField(
-                controller: _searchController,
-                decoration: InputDecoration(
-                  hintText: "Search",
-                  prefixIcon: const Icon(Icons.search),
-                  border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10)
-                  ),
-
-                ),
-              ),
+              const SearchBox(hintText: "Search "),
               const SizedBox(height: 10,),
               Expanded(
                 child: GridView.builder(
@@ -74,4 +65,7 @@ class _SearchPageState extends State<SearchPage> {
     );
   }
 }
+
+
+
 
