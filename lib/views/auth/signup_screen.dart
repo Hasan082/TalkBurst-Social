@@ -2,20 +2,30 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:talkbrust/views/auth/login_screen.dart';
-import 'package:talkbrust/widgets/resusable_formfiled/reusable_form_field.dart';
+import 'package:talkbrust/widgets/reusable_form_field.dart';
 
-import '../../widgets/button/custom_elevated_button.dart';
+import '../../widgets/custom_elevated_button.dart';
 
-class SignUpScreen extends StatelessWidget {
+class SignUpScreen extends StatefulWidget {
   SignUpScreen({super.key});
 
+  @override
+  State<SignUpScreen> createState() => _SignUpScreenState();
+}
+
+class _SignUpScreenState extends State<SignUpScreen> {
   final TextEditingController _fNameTEController = TextEditingController();
-  final TextEditingController _lNameTEController = TextEditingController();
+
   final TextEditingController _uNameTEController = TextEditingController();
+
   final TextEditingController _emailTEController = TextEditingController();
+
   final TextEditingController _mobileTEController = TextEditingController();
+
   final TextEditingController _passwordTEController = TextEditingController();
+
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+
   bool activeBtn = false;
 
   // Regular expression for email validation
@@ -40,12 +50,37 @@ class SignUpScreen extends StatelessWidget {
   }
 
   @override
+  void initState() {
+    super.initState();
+    _fNameTEController.addListener(updateButtonState);
+    _uNameTEController.addListener(updateButtonState);
+    _emailTEController.addListener(updateButtonState);
+    _mobileTEController.addListener(updateButtonState);
+    _passwordTEController.addListener(updateButtonState);
+  }
+
+  void updateButtonState() {
+    setState(() {
+      activeBtn = _fNameTEController.text.isNotEmpty &&
+          _uNameTEController.text.isNotEmpty &&
+          _emailTEController.text.isNotEmpty &&
+          _mobileTEController.text.isNotEmpty &&
+          _passwordTEController.text.isNotEmpty;
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: const Icon(
-          Icons.arrow_back_ios_new_outlined,
-          color: Color.fromRGBO(29, 41, 57, 1),
+        leading: IconButton(
+          icon: const Icon(
+            Icons.arrow_back_ios_new_outlined,
+            color: Color.fromRGBO(29, 41, 57, 1),
+          ),
+          onPressed: () {
+            Get.back();
+          },
         ),
       ),
       body: SafeArea(
@@ -60,7 +95,7 @@ class SignUpScreen extends StatelessWidget {
                   children: [
                     Text(
                       'Register to TalkBrust',
-                      style: Theme.of(context).textTheme.titleMedium,
+                      style: Theme.of(context).textTheme.titleLarge,
                     ),
                     const SizedBox(
                       height: 20,
@@ -79,30 +114,6 @@ class SignUpScreen extends StatelessWidget {
                       onChanged: (value) {
                         if (value!.isEmpty) {
                           return 'Please enter your first name';
-                        }
-                        return null;
-                      },
-                    ),
-                    const SizedBox(
-                      height: 15,
-                    ),
-                    pageTextWidget(
-                      context,
-                      'Last Name',
-                    ),
-                    const SizedBox(
-                      height: 8,
-                    ),
-                    ReusableTextField(
-                      controller: _lNameTEController,
-                      prefixIcon: const Icon(
-                        Icons.person_outline,
-                      ),
-                      keyboardType: TextInputType.name,
-                      hintText: 'Input Last Name',
-                      onChanged: (value) {
-                        if (value!.isEmpty) {
-                          return 'Please enter your last name';
                         }
                         return null;
                       },
@@ -242,7 +253,7 @@ class SignUpScreen extends StatelessWidget {
                         ),
                         InkWell(
                           onTap: () {
-                            Get.offAll(() => LoginScreen());
+                            Get.to(() => LoginScreen());
                           },
                           child: pageTextWidget(
                             context,
