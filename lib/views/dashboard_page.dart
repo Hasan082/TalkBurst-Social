@@ -6,14 +6,14 @@ import 'package:talkbrust/views/post/create_post.dart';
 import 'package:talkbrust/views/search/search_page.dart';
 import 'package:talkbrust/views/user/user_profile_screen.dart';
 
-class DashboardPage extends StatefulWidget {
-  const DashboardPage({super.key});
+class DashboardScreen extends StatefulWidget {
+  const DashboardScreen({super.key});
 
   @override
-  State<DashboardPage> createState() => _DashboardPageState();
+  State<DashboardScreen> createState() => _DashboardScreenState();
 }
 
-class _DashboardPageState extends State<DashboardPage> {
+class _DashboardScreenState extends State<DashboardScreen> {
   late PersistentTabController _controller;
 
   List<Widget> _buildScreens() {

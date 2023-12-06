@@ -1,17 +1,34 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import '../../widgets/button/custom_elevated_button.dart';
-import '../../widgets/resusable_formfiled/reusable_form_field.dart';
-class LoginScreen extends StatelessWidget {
+import 'package:get/get.dart';
+import 'package:talkbrust/views/auth/signup_screen.dart';
+import 'package:talkbrust/views/dashboard_page.dart';
+import '../../widgets/custom_elevated_button.dart';
+import '../../widgets/reusable_form_field.dart';
+
+class LoginScreen extends StatefulWidget {
   LoginScreen({super.key});
 
-  final TextEditingController _emailTEController = TextEditingController();
-  final TextEditingController _passwordTEController = TextEditingController();
-  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
-  final bool activeBtn = false;
+  @override
+  State<LoginScreen> createState() => _LoginScreenState();
+}
 
+class _LoginScreenState extends State<LoginScreen> {
+  final TextEditingController _emailTEController = TextEditingController();
+
+  final TextEditingController _passwordTEController = TextEditingController();
+
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+
+  bool activeBtn = false;
+
+  // Email validation regex pattern
   final RegExp emailRegex = RegExp(
     r'^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$',
+  );
+
+  // Password validation regex pattern
+  final RegExp passwordRegex = RegExp(
+    r'^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$',
   );
 
   Widget pageTextWidget(BuildContext context, String text) {
@@ -22,12 +39,31 @@ class LoginScreen extends StatelessWidget {
   }
 
   @override
+  void initState() {
+    super.initState();
+    _emailTEController.addListener(updateButtonState);
+    _passwordTEController.addListener(updateButtonState);
+  }
+
+  void updateButtonState() {
+    setState(() {
+      activeBtn = _emailTEController.text.isNotEmpty &&
+          _passwordTEController.text.isNotEmpty;
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: const Icon(
-          Icons.arrow_back_ios_new_outlined,
-          color: Color.fromRGBO(29, 41, 57, 1),
+        leading: IconButton(
+          icon: const Icon(
+            Icons.arrow_back_ios_new_outlined,
+            color: Color.fromRGBO(29, 41, 57, 1),
+          ),
+          onPressed: () {
+            Get.back();
+          },
         ),
       ),
       body: SafeArea(
@@ -89,6 +125,9 @@ class LoginScreen extends StatelessWidget {
                   if (value!.isEmpty) {
                     return 'Please enter your password';
                   }
+                  if (!passwordRegex.hasMatch(value)) {
+                    return 'Please enter strong password';
+                  }
                   return null;
                 },
               ),
@@ -98,9 +137,7 @@ class LoginScreen extends StatelessWidget {
               CustomElevatedBtn(
                 onPressed: () {
                   if (_formKey.currentState!.validate()) {
-                    if (kDebugMode) {
-                      print('Registration successful!');
-                    }
+                    Get.offAll(() => const DashboardScreen());
                   }
                 },
                 activeBtn: activeBtn,
@@ -108,6 +145,27 @@ class LoginScreen extends StatelessWidget {
               ),
               const SizedBox(
                 height: 20,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  pageTextWidget(context, 'Don\'t have an account?'),
+                  const SizedBox(
+                    width: 5,
+                  ),
+                  InkWell(
+                    onTap: () {
+                      Get.to(() => SignUpScreen());
+                    },
+                    child: pageTextWidget(
+                      context,
+                      'Sign up',
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(
+                height: 30,
               ),
             ],
           ),

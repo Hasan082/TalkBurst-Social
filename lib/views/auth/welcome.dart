@@ -4,7 +4,7 @@ import 'package:talkbrust/views/auth/login_screen.dart';
 import 'package:talkbrust/views/auth/signup_screen.dart';
 import 'package:talkbrust/views/dashboard_page.dart';
 
-import '../../widgets/button/custom_elevated_button.dart';
+import '../../widgets/custom_elevated_button.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({Key? key}) : super(key: key);
@@ -36,28 +36,24 @@ class WelcomeScreen extends StatelessWidget {
               onPressed: () {
                 Get.to(() => LoginScreen());
               },
-              child: const Row(
+              child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text('Log In'),
-                  SizedBox(
-                    width: 10,
+                  TextButton(
+                    onPressed: () {
+                      Get.to(() => LoginScreen());
+                    },
+                    child: const Text(
+                      'Log In',
+                      style: TextStyle(color: Colors.blue),
+                    ),
                   ),
-                  Text('Log In'),
-                  SizedBox(
-                    width: 10,
+                  const Icon(
+                    Icons.keyboard_arrow_down,
+                    color: Colors.blue,
                   ),
-                  Icon(Icons.keyboard_arrow_down)
                 ],
               ),
-            ),
-            //ToDo: Remove below button before release
-            const SizedBox(height: 100),
-            CustomElevatedBtn(
-              onPressed: () {
-                Get.to(() => const DashboardPage());
-              },
-              btnText: 'Dashboard',
             ),
           ],
         ),
