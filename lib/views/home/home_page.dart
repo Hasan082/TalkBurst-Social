@@ -15,7 +15,7 @@ class HomePage extends StatelessWidget {
 
       body: ListView(
         children: [
-          CustomStoryWidget(),
+          const CustomStoryWidget(),
           // const SizedBox(
           //   height: 165,
           //   child:
