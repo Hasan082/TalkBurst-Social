@@ -61,7 +61,12 @@ class HomeCard extends StatelessWidget {
                     child: TextFormField(
                       decoration: const InputDecoration(
                           hintText: "Add comments",
-                          border: InputBorder.none
+                          border: InputBorder.none,
+                          focusedBorder: InputBorder.none,
+                          enabledBorder: InputBorder.none,
+                          errorBorder: InputBorder.none,
+                          disabledBorder: InputBorder.none,
+                          contentPadding: EdgeInsets.symmetric(horizontal: 15,vertical: 5),
                       ),
                     )
                 )
