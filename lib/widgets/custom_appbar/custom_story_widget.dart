@@ -42,7 +42,9 @@ class CustomStoryWidget extends StatelessWidget {
                         ),
                         const Padding(
                           padding: EdgeInsets.all(3.0),
-                          child: CustomCircularAvater(),
+                          child: CustomCircularAvater(
+                            radius: 13,
+                          ),
                         ),
                         Positioned(
                             top: 0,
@@ -85,7 +87,9 @@ class CustomStoryWidget extends StatelessWidget {
                               fit: BoxFit.fill)),
                       const Padding(
                         padding: EdgeInsets.all(3.0),
-                        child: CustomCircularAvater(),
+                        child: CustomCircularAvater(
+                          radius: 13,
+                        ),
                       )
                     ],
                   ),

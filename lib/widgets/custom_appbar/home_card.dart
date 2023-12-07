@@ -14,7 +14,9 @@ class HomeCard extends StatelessWidget {
           children: [
             Row(
               children: [
-                const CustomCircularAvater(),
+                const CustomCircularAvater(
+                  radius: 13,
+                ),
                 const SizedBox(width: 10,),
                 const Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -64,7 +66,9 @@ class HomeCard extends StatelessWidget {
             const SizedBox(height: 10,),
             Row(
               children: [
-                const CustomCircularAvater(),
+                const CustomCircularAvater(
+                  radius: 13,
+                ),
                 const SizedBox(width: 10,),
                 Expanded(
                     child: TextFormField(
@@ -147,7 +151,9 @@ class HomeCard extends StatelessWidget {
                     padding: const EdgeInsets.symmetric(vertical: 8,horizontal: 20),
                     child: Row(
                       children: [
-                        const CustomCircularAvater(),
+                        const CustomCircularAvater(
+                          radius: 13,
+                        ),
                         Expanded(
                           child: TextFormField(
                             decoration: const InputDecoration(
