@@ -3,6 +3,8 @@ import 'dart:async';
 import 'package:get/get.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 import 'package:talkbrust/views/auth/welcome.dart';
+import 'package:talkbrust/views/dashboard_page.dart';
+import 'package:talkbrust/views/home/home_page.dart';
 
 class SplashController extends GetxController {
   String versionNumber = '';
@@ -23,7 +25,7 @@ class SplashController extends GetxController {
 
   void goToNextScreen() {
     delayedTimer = Timer(const Duration(seconds: 3), () {
-      Get.offAll(() => const WelcomeScreen());
+      Get.offAll(() => const DashboardScreen());
     });
   }
 }
