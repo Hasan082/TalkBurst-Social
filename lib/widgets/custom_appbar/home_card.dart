@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'border_less_circular_avater.dart';
 import 'custom_avater.dart';
 class HomeCard extends StatelessWidget {
   const HomeCard({
@@ -120,9 +121,8 @@ class HomeCard extends StatelessWidget {
                         itemCount: 4,
                         itemBuilder: (context,index){
                           return  ListTile(
-                            leading: const CircleAvatar(
-                                radius: 20,
-                                backgroundImage: NetworkImage("https://maruf136.000webhostapp.com/image/maruf.jpeg")
+                            leading: const BorderlessCircularAvater(
+                              radius: 17,
                             ),
                             title: Padding(
                               padding: const EdgeInsets.only(top: 10),
@@ -189,3 +189,5 @@ class HomeCard extends StatelessWidget {
 
 
 }
+
+
