@@ -1,20 +1,27 @@
 import 'package:flutter/material.dart';
 
-class CustomCircularAvater extends StatelessWidget {
+class CustomCircularAvater extends StatefulWidget {
+  final double radius;
   const CustomCircularAvater({
-    super.key,
+    super.key, required this.radius,
   });
 
+
+  @override
+  State<CustomCircularAvater> createState() => _CustomCircularAvaterState();
+}
+
+class _CustomCircularAvaterState extends State<CustomCircularAvater> {
   @override
   Widget build(BuildContext context) {
-    return const CircleAvatar(
-      radius: 19,
+    return  CircleAvatar(
+      radius: widget.radius+4,
       backgroundColor: Colors.blue,
       child: CircleAvatar(
-        radius: 17,
+        radius: widget.radius+2,
         backgroundColor: Colors.white,
         child: CircleAvatar(
-          radius: 15,
+          radius: widget.radius,
           backgroundImage: NetworkImage("https://maruf136.000webhostapp.com/image/maruf.jpeg"),
         ),
       ),

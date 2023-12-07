@@ -29,7 +29,9 @@ class CustomNotificationCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            const CustomCircularAvater(),
+            const CustomCircularAvater(
+              radius: 13,
+            ),
             const SizedBox(
               width: 10,
             ),

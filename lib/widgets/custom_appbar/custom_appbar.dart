@@ -17,7 +17,9 @@ class CustomAppbar extends StatelessWidget {
       elevation: 0,
       title: Row(
         children: [
-          const CustomCircularAvater(),
+          const CustomCircularAvater(
+            radius: 13,
+          ),
           const Spacer(),
           Text(
             "Talk Bust",
