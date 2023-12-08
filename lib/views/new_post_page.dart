@@ -10,8 +10,15 @@ class NewPostPage extends StatefulWidget {
 
 class _NewPostPageState extends State<NewPostPage> {
   final TextEditingController _writeCaptionController=TextEditingController();
+
+  @override
+  void initState() {
+    super.initState();
+  }
   @override
   Widget build(BuildContext context) {
+
+
 
     return Scaffold(
       appBar: appBar(context),
@@ -50,14 +57,19 @@ class _NewPostPageState extends State<NewPostPage> {
       ),
       title:Text("New Post",style: Theme.of(context).textTheme.titleMedium,) ,
       actions: [
-        Center(child: Text("Post",style:Theme.of(context).textTheme.titleSmall?.apply(color: Colors.blue),)),
+        InkWell(
+            onTap: (){
+              _showAlertDialog(context);
+            },
+            child: Center(child: Text("Post",style:Theme.of(context).textTheme.titleSmall?.apply(color: Colors.blue),))
+        ),
         IconButton(
           icon: const Icon(
             Icons.arrow_forward_ios,
             color: Color.fromRGBO(29, 41, 57, 1),
           ),
           onPressed: () {
-
+            _showAlertDialog(context);
           },
         ),
 
@@ -223,5 +235,42 @@ SizedBox get addMusicButton{
         ),
       ),
     ),
+  );
+}
+
+
+
+// Function to show the alert dialog
+Future<void> _showAlertDialog(BuildContext context) async {
+  return showDialog<void>(
+    context: context,
+    builder: (BuildContext context) {
+      return AlertDialog(
+
+        content: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Image.asset("assets/images/alert.png",width: 60,height: 60,),
+            const Text("Do You want to post?",style: TextStyle(fontSize: 18,fontWeight: FontWeight.w500),),
+            const SizedBox(height: 10,),
+            const Text("Your post will share by clicking yes, if need any change click on edit.",maxLines:2,style: TextStyle(fontSize: 15,),),
+            const SizedBox(height: 20,),
+            Row(
+              children: [
+                TextButton(
+                  onPressed: () {
+                    Navigator.of(context).pop(); // Close the alert dialog
+                  },
+                  child: Text('Edit'),
+                ),
+                const Spacer(),
+                ElevatedButton(onPressed: (){}, child: const Text('Post Now'))
+              ],
+            )
+          ],
+        ),
+
+      );
+    },
   );
 }

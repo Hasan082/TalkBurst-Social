@@ -51,14 +51,11 @@ class _DashboardScreenState extends State<DashboardScreen> {
     ];
   }
 
-
   @override
   void initState() {
     _controller = PersistentTabController(initialIndex: 0);
     super.initState();
   }
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -91,5 +88,12 @@ class _DashboardScreenState extends State<DashboardScreen> {
       navBarStyle: NavBarStyle.style9,
     );
   }
+
+
+
+
+
 }
+
+
 
