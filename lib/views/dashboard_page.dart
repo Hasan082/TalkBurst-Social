@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 import 'package:talkbrust/views/home/home_page.dart';
+import 'package:talkbrust/views/new_post_page.dart';
 import 'package:talkbrust/views/post/create_post.dart';
 import 'package:talkbrust/views/search/search_page.dart';
 import 'package:talkbrust/views/user/user_profile_screen.dart';
@@ -20,7 +21,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
     return const [
       HomePage(),
       SearchPage(),
-      CreatePostPage(),
+      NewPostPage(),
       UserProfileScreen(),
     ];
   }
